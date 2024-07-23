@@ -15,7 +15,7 @@
 - Spotify
 - Discord(?)
 
-### To-Do widgets:
+### To-Do - widgets:
 - increase font size of bar by 1
 - Weather widget (idk why but why not)
 - Cool clock
