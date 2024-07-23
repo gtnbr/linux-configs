@@ -14,9 +14,11 @@
 - Logseq(?)/Obsidian
 - Spotify
 - Discord(?)
+- SDDM
+- Grub
 
 ### To-Do - widgets:
-- increase font size of bar by 1
+- Increase font size of bar by 1
 - Weather widget (idk why but why not)
 - Cool clock
 - Defaul Desktop app?
@@ -27,5 +29,5 @@
 - Cooler rofi button
 - Cooler firefox button (or make it do/show something else)
 - Add CPU/GPU/RAM/STR why not
-- music bar on the right if music is playing
+- Music bar on the right if music is playing
 - Battery for laptop dayz
