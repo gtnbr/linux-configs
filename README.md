@@ -1,4 +1,9 @@
-### To-Do
+### To-Do - learn:
+- Fish/Zsh
+- Network interface
+- Study qtile extras widget decorations #rect
+
+### To-Do - customization:
 - Alacritty
 - Thunar
 - Nvim
@@ -9,3 +14,18 @@
 - Logseq(?)/Obsidian
 - Spotify
 - Discord(?)
+
+### To-Do widgets:
+- increase font size of bar by 1
+- Weather widget (idk why but why not)
+- Cool clock
+- Defaul Desktop app?
+- Calendar
+- Proper off button
+- Fix volume bar
+- Highlight Weekday on bar yellow (or equivalent) #rect
+- Cooler rofi button
+- Cooler firefox button (or make it do/show something else)
+- Add CPU/GPU/RAM/STR why not
+- music bar on the right if music is playing
+- Battery for laptop dayz
