@@ -1,0 +1,11 @@
+### To-Do
+- Alacritty
+- Thunar
+- Nvim
+- Rofi
+- Themes
+- Shell
+- Firefox
+- Logseq(?)/Obsidian
+- Spotify
+- Discord(?)
