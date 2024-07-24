@@ -7,69 +7,7 @@ import subprocess
 import time
 
 from qtile_extras import widget
-from qtile_extras.widget.decorations import PowerLineDecoration
-
-lslash5 = {
-    "decorations": [
-        PowerLineDecoration(path="forward_slash", size=5)
-    ]
-}
-lslash10 = {
-    "decorations": [
-        PowerLineDecoration(path="forward_slash", size=10)
-    ]
-}
-lslash15 = {
-    "decorations": [
-        PowerLineDecoration(path="forward_slash", size = 15)
-    ]
-}
-lslash20 = {
-    "decorations": [
-        PowerLineDecoration(path="forward_slash", size = 20)
-    ]
-}
-
-rslash5 = {
-    "decorations": [
-        PowerLineDecoration(path="back_slash", size=5)
-    ]
-}
-rslash10 = {
-    "decorations": [
-        PowerLineDecoration(path="back_slash", size=10)
-    ]
-}
-rslash15 = {
-    "decorations": [
-        PowerLineDecoration(path="back_slash", size = 15)
-    ]
-}
-rslash20 = {
-    "decorations": [
-        PowerLineDecoration(path="back_slash", size = 20)
-    ]
-}
-
-
-lpowerline = {
-    "decorations": [
-        PowerLineDecoration()
-    ]
-}
-rpowerline = {
-    "decorations": [
-        PowerLineDecoration(path="arrow_right")
-    ]
-}
-
-@hook.subscribe.startup
-def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    subprocess.Popen([home])
-
-mod = "mod4"
-terminal = guess_terminal()
+from qtile_extras.widget.decorations import PowerLineDecoration, RectDecoration
 
 color = [
     "e7ecf0",
@@ -83,6 +21,34 @@ color = [
     "9fada1",
     "9c9c9c"
 ]
+
+daterec = {
+    "decorations": [
+        RectDecoration(colour="#BF6B56", radius=3, filled=True, padding_x=3,padding_y=4),
+        RectDecoration(colour=color[4], radius=2, filled=True, padding_x=4,padding_y=5)
+    ],
+    "padding": 10,
+}
+
+lslash10 = {
+    "decorations": [
+        PowerLineDecoration(path="forward_slash", size=10)
+    ]
+}
+
+rslash10 = {
+    "decorations": [
+        PowerLineDecoration(path="back_slash", size=10)
+    ]
+}
+
+@hook.subscribe.startup
+def autostart():
+    home = os.path.expanduser('~/.config/qtile/autostart.sh')
+    subprocess.Popen([home])
+
+mod = "mod4"
+terminal = guess_terminal()
 
 keys = [
     Key([mod], "j", lazy.layout.left(), desc="Move focus to left"),
@@ -131,7 +97,6 @@ for vt in range(1, 8):
         )
     )
 
-
 groups = [Group(i) for i in "123456789"]
 
 for i in groups:
@@ -153,22 +118,31 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(
-        border_focus_stack=["#d75f5f", "#8f3d3d"],
-        border_width=0,
-        margin=3
-        ),
-    layout.Max(),
+    # layout.Columns(
+    #     border_focus_stack=["#d75f5f", "#8f3d3d"],
+    #     border_width=0,
+    #     margin=10
+    #     ),
+    # layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
+    layout.Bsp(
+        border_width=0,
+        margin=10
+    ),
+    # layout.Matrix(
+    #     border_width=0,
+    #     margin=10
+    # ),
     layout.MonadTall(
         border_focus_stack=["#d75f5f", "#8f3d3d"],
         border_width=0,
-        margin=3
+        margin=10
         ),
-    # layout.MonadWide(),
+    # layout.MonadWide(
+    #     border_width=0,
+    #     margin=10
+    # ),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
@@ -177,10 +151,10 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=12,
-    margin = 4,
-    background = color[5]
+    font="SourceCodeVF",
+    fontsize=14,
+    margin = 3,
+    background = "#1c1a2455"
 )
 extension_defaults = widget_defaults.copy()
 
@@ -190,8 +164,8 @@ screens = [
             [
                 widget.Image(
                     filename = "~/.icons/qtile-bar/map-solid.svg",
-                    color= color[0],
-                    margin = 8,
+                    background= color[5],
+                    margin = 7,
                     mouse_callbacks = {'Button1': lambda: qtile.cmd_spawn('rofi -show drun')},
                     **lslash10
                 ),
@@ -201,8 +175,8 @@ screens = [
                     this_current_screen_border=color[4],
                     highlight_method="block",
                     inactive=color[0],
-                    borderwidth=1,
-                    padding_y=1,
+                    borderwidth=2,
+                    padding_y=0,
                     **lslash10
                 ),
                 widget.Image(
@@ -214,44 +188,35 @@ screens = [
                 ),
                 widget.Spacer(
                     length=8,
-                    background=color[1]
                 ),
                 widget.Image(
                     filename = "~/.icons/qtile-bar/compass-solid.svg",
-                    background = color[1],
                     margin_y = 7.3,
                     margin_x = 0
                 ),
                 widget.Prompt(
-                    background=color[1],
                     margin=0
                 ),
                 widget.WindowName(
-                    background=color[1],
                     margin=0,
                 ),
                 widget.Chord(
-                    background=color[1],
                     chords_colors={
                         "launch": (color[5], color[0]),
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.Systray(
-                    background=color[1]
-                ),
+                widget.Systray(),
                 widget.Volume(
-                    background=color[1],
                     get_volume_command=True,
                     fmt="{}%"
-                    ),
+                ),
                 widget.OpenWeather(
-                    background=color[1],
                     location="liverpool",
                     format="{icon}",
                     **rslash10
                 ),
-                widget.Cmus(background=color[1]),
+                widget.Cmus(),
                 widget.Clock(
                     format="%H:%M",
                     foreground=color[1],
@@ -260,10 +225,21 @@ screens = [
                     **rslash10
                 ),
                 widget.Clock(
-                    format="%a %d/%m/%y",
+                    format="%a",
                     foreground=color[0],
-                    background=color[2],
+                    background=color[6],
                     mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("alacritty -e bash -c \"cal -m -y; read\"")},
+                ),
+                widget.Clock(
+                    padding=0,
+                    format="%d/%m/%y",
+                    foreground=color[0],
+                    background=color[6],
+                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("alacritty -e bash -c \"cal -m -y; read\"")},
+                ),
+                widget.Spacer(
+                    length=6,
+                    background=color[6],
                     **rslash10
                 ),
                 widget.QuickExit(
