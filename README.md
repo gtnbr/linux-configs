@@ -1,7 +1,6 @@
 ### To-Do - learn:
 - Fish/Zsh
 - Network interface
-- Study qtile extras widget decorations #rect
 
 ### To-Do - customization:
 - Alacritty
@@ -18,14 +17,12 @@
 - Grub
 
 ### To-Do - widgets:
-- Increase font size of bar by 1
 - Weather widget (idk why but why not)
 - Cool clock
 - Defaul Desktop app?
 - Calendar
 - Proper off button
 - Fix volume bar
-- Highlight Weekday on bar yellow (or equivalent) #rect
 - Cooler rofi button
 - Cooler firefox button (or make it do/show something else)
 - Add CPU/GPU/RAM/STR why not
