@@ -1,16 +1,17 @@
 ### To-Do - learn:
-- Fish/Zsh
-- Network interface
+- Fish/Zsh 
+- Network interface :white_check_mark:
+- Look into qtile extras decorations :white_check_mark:
 
 ### To-Do - customization:
 - Alacritty
 - Thunar
-- Nvim
-- Rofi
-- Themes
-- Shell
+- Obsidian :white_check_mark:
+- Codium :white_check_mark:
+- Nvim 
+- Rofi 
+- Themes 
 - Firefox
-- Logseq(?)/Obsidian
 - Spotify
 - Discord(?)
 - SDDM
@@ -19,7 +20,7 @@
 ### To-Do - widgets:
 - Weather widget (idk why but why not)
 - Cool clock
-- Defaul Desktop app?
+- Default Desktop app?
 - Calendar
 - Proper off button
 - Fix volume bar
