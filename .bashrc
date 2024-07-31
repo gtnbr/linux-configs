@@ -14,8 +14,12 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 alias vim="nvim"
 alias pacsyu="sudo pacman -Syu"
-alias yaysua="yay -Sua --noconfirm"
+alias yaysua="yay -Sua 1--noconfirm"
 alias yaysyu="yay -Syu --noconfirm"
 alias grep='grep --color=auto'
+
+alias openconfig="code ~/.config/qtile/config.py"
+alias openbashrc="code ~/.bashrc"
+alias openpicom="code ~/.config/picom/picom.conf"
 
 PS1='[\u@\h \W]\$ '
