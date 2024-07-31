@@ -1,0 +1,59 @@
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.bright]
+black = "0x292932"
+blue = "0x9ba4cc"
+cyan = "0xb7ccc9"
+green = "0xbad29e"
+magenta = "0xc784a4"
+red = "0xca8c93"
+white = "0xd0d0d0"
+yellow = "0xd7b299"
+
+[colors.cursor]
+cursor = "0x4d4d4c"
+text = "0xffffff"
+
+[colors.normal]
+black = "0x1c1a24"
+blue = "0x3d497f"
+cyan = "0x5fada1"
+green = "0x69a328"
+magenta = "0x7c3b5a"
+red = "0xad3d4a"
+white = "0x9c9c9c"
+yellow = "0xfa9652"
+
+[colors.primary]
+background = "0x1c1a24"
+foreground = "0xe7ecf0"
+
+[font]
+size = 9
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+opacity = 0.95
+blur = true
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 100
+lines = 85
+
+[window.padding]
+x = 5
+y = 3
+
+[env]
+TERM = "xterm-256color"

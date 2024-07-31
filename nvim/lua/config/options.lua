@@ -1,0 +1,10 @@
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.autowrite = true
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.smartindent = true
+vim.opt.autowrite = true
+vim.opt.undolevels = 10000
+vim.opt.mouse = "a"
