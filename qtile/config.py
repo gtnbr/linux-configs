@@ -22,14 +22,6 @@ color = [
     "9c9c9c"
 ]
 
-daterec = {
-    "decorations": [
-        RectDecoration(colour="#BF6B56", radius=3, filled=True, padding_x=3,padding_y=4),
-        RectDecoration(colour=color[4], radius=2, filled=True, padding_x=4,padding_y=5)
-    ],
-    "padding": 10,
-}
-
 lslash10 = {
     "decorations": [
         PowerLineDecoration(path="forward_slash", size=10)
@@ -84,7 +76,8 @@ keys = [
     Key([mod], "d", lazy.spawn("discord"), desc="Launch VSCodium"),
     Key([mod], "grave", lazy.spawn('rofi -show drun'), desc="Open rofi"),
     Key([mod], "q", lazy.spawn('lowriter'), desc="Open word"),
-    Key([mod], "x", lazy.spawn('localc'), desc="Open excel")
+    Key([mod], "x", lazy.spawn('localc'), desc="Open excel"),
+    Key([mod], "o", lazy.spawn('obsidian'), desc="Open obsidian")
 ]
 
 for vt in range(1, 8):
@@ -153,7 +146,7 @@ layouts = [
 widget_defaults = dict(
     font="SourceCodeVF",
     fontsize=14,
-    margin = 3,
+    margin = 3.5,
     background = "#1c1a2455"
 )
 extension_defaults = widget_defaults.copy()
@@ -175,7 +168,7 @@ screens = [
                     this_current_screen_border=color[4],
                     highlight_method="block",
                     inactive=color[0],
-                    borderwidth=2,
+                    borderwidth=1,
                     padding_y=0,
                     **lslash10
                 ),
